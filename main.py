@@ -1,11 +1,13 @@
 # Main script for executing python code
 from helpers import Converter
 import time, datetime
-from base import DatabaseOperations, AUTHOR
+from core import Scraper
 
 def main():
-    time.sleep(2.0)
-    print("Hello from Python Redis :)")
+    url = "https://www.rappler.com/nation/elections/ferdinand-bongbong-marcos-jr-media-blitz-january-2022/"
+    scraper = Scraper(url=url)
+    print(scraper.get_title())
+    print(scraper.relevant_links)
 
 
 
